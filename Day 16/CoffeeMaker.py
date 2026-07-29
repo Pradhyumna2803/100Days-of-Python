@@ -12,9 +12,11 @@ class CoffeeMaker:
         print(f"There is {self.resources["milk"]}ml of milk left")
         print(f"There is {self.resources["coffee"]}g of water left")
 
-    def is_resource_sufficient(self,orderName):
-        for item in orderName:
-            if self.orderName.ingredients[item] > self.resources[item]:
-                print(f'Sorry, we don\'t have enough {self.resources[item]} currently. ')
-                return False
-        return True
+    def is_resource_sufficient(self,drink):
+        """Returns True when order can be made, False if ingredients are insufficient."""
+        can_make = True
+        for item in drink.ingredients:
+            if drink.ingredients[item] > self.resources[item]:
+                print(f"Sorry there is not enough {item}.")
+                can_make = False
+        return can_make
