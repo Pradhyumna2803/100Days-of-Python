@@ -26,4 +26,4 @@ class BankAccount:
 
 
 acc1 = BankAccount(123,"Ganesh",50000)
-acc1.check_balance(123)
+acc1.withdraw_money(123,8910)
