@@ -21,7 +21,7 @@ class Menu:
             """Returns names of all the available menu items"""
             options = ""
             for item in self.menu:
-                   options += f"{self.menu}"
+                   options += f"{item.name} "
             return options
 
         def findDrink(self, orderName):

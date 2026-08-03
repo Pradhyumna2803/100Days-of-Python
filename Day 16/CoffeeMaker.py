@@ -20,3 +20,8 @@ class CoffeeMaker:
                 print(f"Sorry there is not enough {item}.")
                 can_make = False
         return can_make
+
+    def make_coffee(self,order):
+        for item in order.ingredients:
+            self.resources[item] -= order.ingredients[item]
+        print(f'Here is your {order.name}. Enjoy!')
