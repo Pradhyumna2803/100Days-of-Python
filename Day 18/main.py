@@ -1,51 +1,44 @@
-from turtle import Turtle, Screen
+import colorgram
+import turtle as t
 import random
+from turtle import Screen
 
-tim = Turtle()
+# rgb_colors = []
+# colors = colorgram.extract(r'C:\Users\Lenovo\OneDrive\Desktop\Python Files v2\Day 18\image.jpg',30)
 
-screen = Screen()
-tim.shape("turtle")
-colors = ['green yellow','sandy brown', 'olive drab' ,'indian red' , 'purple' , 'pale violet red' , 'turquoise' , 'yellow']
+# for color in colors:
+#     r = color.rgb.r
+#     g = color.rgb.g
+#     b = color.rgb.b
+#     new_color = (r,g,b)
+#     rgb_colors.append(new_color)
 
-"""Dotted line"""
-# for i in range(15):
-#     tim.forward(10)
-#     tim.penup()
-#     tim.forward(10)
-#     tim.pendown()
-
-
-# """Pentagon"""
-# for i in range(5):
-#     tim.forward(100)
-#     tim.left(72)
-
-# """Hexagon"""
-# for i in range(6):
-#     tim.forward(100)
-#     tim.left(60)
-
-# def draw_shapes(num_sides):
-#     angle = 360 / num_sides
-#     for _ in range(num_sides):
-#         tim.forward(100)
-#         tim.right(angle)
-
-# for shape_side_n in range(3,11):
-#     tim.color(random.choice(colors))
-#     draw_shapes(shape_side_n)
-
-"""Random Walk"""
-directions = [0,90,180,270]
-speed = ["fastest" , "fast" , "normal"]
-for _ in range(250):
-    tim.color(random.choice(colors))
-    tim.pensize(15)
-    tim.speed(random.choice(speed))
-    tim.forward(30)
-    tim.setheading(random.choice(directions))
+# print(rgb_colors)
 
 
-screen.screensize(50,50)
-screen.exitonclick()
+color_list = [(221, 232, 225), (208, 160, 81), (55, 89, 132), (145, 91, 40), (139, 26, 48), (222, 208, 104), (132, 177, 203), (45, 55, 104), (158, 45, 84), (169, 159, 39), (128, 189, 143), (84, 20, 44), (38, 43, 66), (186, 94, 106), (189, 138, 166), (84, 124, 182), (60, 39, 30), (79, 153, 165), (87, 157, 90), (195, 79, 72), (160, 201, 220), (45, 74, 77), (79, 74, 43), (59, 125, 113), (218, 176, 188), (167, 207, 166), (220, 181, 168)]
+tim = t.Turtle()
+t.colormode(255)
+tim.penup()
+tim.hideturtle()
 
+s = Screen()
+tim.speed('fastest')
+tim.setheading(225)
+tim.forward(250)
+tim.setheading(0)
+number_of_dots = 100
+
+
+for dot_count in range(1,number_of_dots+1):
+    
+    tim.dot(20,random.choice(color_list))
+    tim.forward(50)
+
+    if(dot_count % 10 == 0):
+        tim.setheading(90)
+        tim.forward(50)
+        tim.setheading(180)
+        tim.forward(500)
+        tim.setheading(0)
+s.exitonclick()
