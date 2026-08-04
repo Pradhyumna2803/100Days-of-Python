@@ -25,5 +25,29 @@ class BankAccount:
         print(f"Your balance is {self.balance}")
 
 
-acc1 = BankAccount(123,"Ganesh",50000)
-acc1.withdraw_money(123,8910)
+#Examples for Getters & Setters
+
+class MyClass:
+    def __init__(self, value):
+        self._value = value
+
+    def show(self):
+        print(f'The value is {self._value}')
+
+    @property
+    def x10(self):
+        return self._value * 10
+
+    @x10.setter
+    def x10(self):
+        return self._value / 10
+
+
+# acc1 = BankAccount(123,"Ganesh",50000)
+# acc1.withdraw_money(123,8910)
+
+obj = MyClass(10)
+obj.x10 = 25
+print(obj.x10)
+obj.show()
+
