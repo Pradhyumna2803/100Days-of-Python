@@ -57,3 +57,17 @@ class Cow(Animal):
         self._color = new_col
         print(f'The updated color of our cow is {self._color}')
 
+class Calf(Cow):
+    def __init__(self, name, age, breed, _color, gender):
+        super().__init__(name, age, breed, _color)
+        self.gender = gender
+
+    def info(self):
+        print(f'This is our calf {self.name}')
+
+    def sound(self):
+        print(f'{self.name} moos')
+
+    def set_color(self, new_col):
+        self._color = new_col
+        print(f'The updated color of our calf is {self._color}')

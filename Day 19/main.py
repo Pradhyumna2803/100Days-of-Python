@@ -13,3 +13,7 @@ cow = f.Cow('cow',8,'Jersey','White')
 print(cow._color)
 cow.set_color('brown')
 print(cow._color)
+
+calf = f.Calf('calf',2,'Jersey','Cream','F')
+print(calf.gender)
+calf.set_color('White')
