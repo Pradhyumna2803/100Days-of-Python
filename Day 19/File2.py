@@ -8,6 +8,9 @@ class Animal:
     def sound(self):
         print("Animal makes a sound!")
 
+    def greet(self):
+        print("Animal Greets you! ")
+
 
 
 class Dog(Animal):
@@ -40,3 +43,17 @@ class Cat(Animal):
 
     def greet(self):
         print(f'You greet {self.name} !! And you are ignored!! ')
+
+
+class Cow(Animal):
+    def __init__(self, name,age,breed, _color):
+        super().__init__(name)
+        self.name = name
+        self.age = age
+        self.breed = breed
+        self._color = _color
+
+    def set_color(self,new_col):
+        self._color = new_col
+        print(f'The updated color of our cow is {self._color}')
+
